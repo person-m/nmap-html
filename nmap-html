@@ -1,0 +1,24 @@
+#!/bin/bash
+if [ $1 = '-h' ]
+then
+cat << EOF
+Usage:
+  $ ./nmap-html {target specification} [output file name]
+
+  TARGET SPECIFICATION:
+    Can pass hostnames, IP addresses, networks, etc.
+  OUTPUT (optional):
+    Filename to the xml and html file generated. Default is 'report'.
+EOF
+  exit 1;
+fi
+
+printf "RUN: nmap -A -oX - %s > %s.xml\n" "$1" "${2:-report}" &&
+nmap -A -oX - $1 > ${2:-report}.xml &&
+printf "RUN: xsltproc %s.xml -o %s.html\n" "${2:-report}" "${2:-report}" &&
+xsltproc ${2:-report}.xml -o ${2:-report}.html &&
+printf "RUN: rm %s.xml\n" "${2:-report}" &&
+rm ${2:-report}.xml &&
+printf "RUN: open ./%s.html || xdg-open %s.html\n" "${2:-report}" "${2:-report}" &&
+(open ./${2:-report}.html 2> /dev/null || xdg-open ${2:-report}.html)
+printf "DONE %s.html generated\n" "${2:-report}"
