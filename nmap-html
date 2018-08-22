@@ -20,5 +20,5 @@ xsltproc ${2:-report}.xml -o ${2:-report}.html &&
 printf "RUN: rm %s.xml\n" "${2:-report}" &&
 rm ${2:-report}.xml &&
 printf "RUN: open ./%s.html || xdg-open %s.html\n" "${2:-report}" "${2:-report}" &&
-(open ./${2:-report}.html 2> /dev/null || xdg-open ${2:-report}.html)
+(open ./${2:-report}.html 2> /dev/null || xdg-open ${2:-report}.html) &&
 printf "DONE %s.html generated\n" "${2:-report}"
