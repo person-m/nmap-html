@@ -13,7 +13,7 @@
 
 ## Usage
 ```
-$ nmap-html {target specification} [output's file name]
+$ ./nmap-html {target specification} [output file name]
 
 TARGET SPECIFICATION:
     Can pass hostnames, IP addresses, networks, etc.
