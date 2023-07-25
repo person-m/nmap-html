@@ -22,4 +22,6 @@ OUTPUT (optional):
 ```
 
 ## Example
-`nmap-html 192.168.1.0/24`
+```
+nmap-html 192.168.1.0/24
+```
