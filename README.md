@@ -9,7 +9,7 @@
     - On Fedora `dnf install xdg-utils`
 
 ### Mac
-* It works! :smile: 
+*  `brew install nmap`
 
 ## Usage
 ```
