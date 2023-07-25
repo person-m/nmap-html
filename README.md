@@ -20,3 +20,6 @@ TARGET SPECIFICATION:
 OUTPUT (optional):
     Filename to the xml and html file generated. Default is 'report'.
 ```
+
+## Example
+`nmap-html 192.168.1.0/24`
